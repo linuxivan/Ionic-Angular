@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Alta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <form (ngSubmit)="altaCurso()">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-select name="usuario" [(ngModel)]="selecteduser">
+            <ion-select-option *ngFor="let usuario of usuarios" [value]="usuario.id">
+              {{usuario.username}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Curso</ion-label>
+          <ion-select name="curso" [(ngModel)]="selectedcurso">
+            <ion-select-option *ngFor="let curso of cursos" [value]="curso.id">
+              {{curso.nombre}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Nota</ion-label>
+          <ion-input type="number" name="nota" [(ngModel)]="nota"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Alta</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-card>
+</ion-content>

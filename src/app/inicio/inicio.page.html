@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Cursos:</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let curso of cursos" (click)="verCurso(curso)">
+      <ion-label>{{curso.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

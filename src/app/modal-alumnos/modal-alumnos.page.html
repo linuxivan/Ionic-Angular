@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="alumnos">
+    <ion-list-header>
+      <h1>Alumnos en {{ title }}</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-img *ngIf="alumno.fotoperfil" src="{{ alumno.fotoperfil }}"></ion-img>
+      <ion-text mode="text">{{ alumno.username }}</ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>
